@@ -13,6 +13,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to t(".profile_header"), current_user %></li>
               <li><%= link_to t(".setting_header"), "#" %></li>
+              <li><%= link_to t("posts.header"), new_post_path %><li>
               <li class="divider"></li>
               <li>
               <%= link_to t(".logout_header"), logout_path, method: :delete %>
@@ -32,6 +33,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to t(".help_header"), help_path %></li>
               <li><%= link_to t(".about_header"), about_path %></li>
+              <li><%= link_to t("posts.title"), posts_path %></li>
             </ul>
         </li>
       </ul>

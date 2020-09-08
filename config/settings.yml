@@ -20,3 +20,7 @@ users:
   image:
     height: 100
     width: 100
+
+posts:
+  page:
+    max: 5

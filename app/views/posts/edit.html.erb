@@ -1,0 +1,15 @@
+<%= t "posts.edit" %>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+  <%= render "shared/error_postmessages" %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.submit t("posts.submit"), class: "btn btn-primary" %>
+  </p>
+<% end %>
