@@ -1,2 +1,36 @@
 en:
   hello: "Hello world"
+
+  layouts:
+    application:
+      title: "Gamer Community"
+    header:
+      logo: "Gamer Community"
+      signup_header: "Sign Up"
+      login_header: "Log In"
+      symbol_header: "=="
+      help_header: "Help"
+      about_header: "About"
+
+  static_pages:
+    home:
+      home_title: "Home" 
+      heading: "Gamer Community"
+      description_title: "This is the home page for the Gamer Community."
+    help:
+      help_title: "Help"
+      heading: "Help"
+      description_title: "This is the help page for this Gamer Community."
+      description_detail: "Get help through the email: "
+      email: "xiangxiang181818@gmail.com"
+
+    about:
+      about_title: "About" 
+      heading: "About"
+      description_title: "This is the about page for the Gamer Community."
+
+  users:
+    new:
+      signup_title: "Sign Up"
+      heading: "Sign Up"
+      description_title: "This will be a sign up page for new users."
