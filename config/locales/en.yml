@@ -8,13 +8,13 @@ en:
       logo: "Gamer Community"
       signup_header: "Sign Up"
       login_header: "Log In"
-      symbol_header: "=="
+      symbol_header: "More"
       help_header: "Help"
       about_header: "About"
 
   static_pages:
     home:
-      home_title: "Home" 
+      home_title: "Home"
       heading: "Gamer Community"
       description_title: "This is the home page for the Gamer Community."
     help:
@@ -25,7 +25,7 @@ en:
       email: "xiangxiang181818@gmail.com"
 
     about:
-      about_title: "About" 
+      about_title: "About"
       heading: "About"
       description_title: "This is the about page for the Gamer Community."
 
