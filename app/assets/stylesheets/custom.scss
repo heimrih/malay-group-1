@@ -54,6 +54,15 @@ p {
 
 /* header */
 
+.navbar-inverse {
+  background-color: $lightskyblue;
+  border-color: $white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: $white;
+}
+
 #logo {
   float: left;
   margin-right: 10px;

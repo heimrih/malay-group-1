@@ -1,3 +1,12 @@
 gamer_community:
   help:
     mail: mailto:xiangxiang181818@gmail.com
+
+validations:
+  name:
+    max_length: 50
+  email:
+    max_length: 255
+    regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+  password:
+    min_length: 6
