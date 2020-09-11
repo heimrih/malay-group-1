@@ -30,7 +30,13 @@ en:
       description_title: "This is the about page for the Gamer Community."
 
   users:
+    users_not_found: "User not found!"
     new:
       signup_title: "Sign Up"
       heading: "Sign Up"
       description_title: "This will be a sign up page for new users."
+      signup_create: "Create my account"
+      confirmation: "Confirmation"
+    create:
+      success_mess_create: "Welcome to Sample App!"
+      fail_mess_create: "Account created fail !!!"
