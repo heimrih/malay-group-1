@@ -1,10 +1,19 @@
 <% provide :title, @user.name %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-8">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <dir class="image">
+          <% if @user.avatar? %>
+            <%= image_tag @user.avatar.url, height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
+          <% else %>
+            <%= image_tag "default.png", height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
+          <% end %>
+        </dir>
+        <dir class="user-info">
+          <div><%= @user.name %></div>
+          <div><%= @user.email %></div>
+        </dir>
       </h1>
     </section>
   </aside>

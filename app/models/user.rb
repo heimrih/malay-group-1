@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  USERS_PARAMS = %i(name email password password_confirmation).freeze
+  USERS_PARAMS = %i(avatar name email password password_confirmation).freeze
+
+  mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true,
     length: { maximum: Settings.validations.name.max_length }

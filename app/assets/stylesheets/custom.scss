@@ -161,3 +161,20 @@ input {
     color: $state-danger-text;
   }
 }
+
+.upload-preview {
+  margin-bottom: 5px;
+}
+
+
+/* users/show */
+
+.image {
+  float: left;
+}
+
+.user-info {
+  float: left;
+  margin-right: 25px;
+  margin-top: 50px;
+}
