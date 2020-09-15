@@ -8,6 +8,11 @@ en:
       logo: "Gamer Community"
       signup_header: "Sign Up"
       login_header: "Log In"
+      users_header: "Users"
+      account_header: "Account"
+      profile_header: "Profile"
+      setting_header: "Settings"
+      logout_header: "Log out"
       symbol_header: "More"
       help_header: "Help"
       about_header: "About"
@@ -38,5 +43,17 @@ en:
       signup_create: "Create my account"
       confirmation: "Confirmation"
     create:
-      success_mess_create: "Welcome to Gamer Community!"
+      success_mess_create: "Welcome to Forum of Gamer Community!"
       fail_mess_create: "Account created fail !!!"
+
+  sessions:
+    new:
+      login_title: "Log In"
+      heading: "Log In"
+      login: "Login"
+    create:
+      fail_mess_session: "INVALID email or password combination !"
+    newform:
+      btn_signup: "New User ?"
+      signup_now: "Sign Up Now!"
+      remember_user: "Remember me in this computer."

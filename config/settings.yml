@@ -13,6 +13,9 @@ validations:
   password:
     min_length: 6
 
+collections:
+  session_controller_create: 1
+
 users:
   image:
     height: 100
