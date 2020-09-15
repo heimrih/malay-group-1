@@ -1,17 +1,23 @@
 <%= form_for @user do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
+  <div class="upload-preview">
+    <img width="250" height="250" alt="Your Avatar">
+  </div>
+
+  <%= f.file_field :avatar, class: "file" %>
+
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
-      
+
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
-      
+
   <%= f.label :password %>
   <%= f.password_field :password, class: "form-control" %>
-      
+
   <%= f.label :password_confirmation, t(".confirmation") %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
-      
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

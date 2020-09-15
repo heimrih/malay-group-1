@@ -38,5 +38,5 @@ en:
       signup_create: "Create my account"
       confirmation: "Confirmation"
     create:
-      success_mess_create: "Welcome to Sample App!"
+      success_mess_create: "Welcome to Gamer Community!"
       fail_mess_create: "Account created fail !!!"
