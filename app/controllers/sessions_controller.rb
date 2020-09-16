@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if user&.authenticate params[:session][:password]
       log_in user
       params[:session][:remember_me].eql? Settings.collections.session_controller_create ? remember(user) : forget(user)
-      redirect_to user
+      redirect_back_or user
     else
       flash.now[:danger] = t "sessions.create.fail_mess_session"
       render :new

@@ -20,6 +20,9 @@ users:
   image:
     height: 100
     width: 100
+  default_image:
+    list: 50
+  icon: 30
 
 posts:
   page:
