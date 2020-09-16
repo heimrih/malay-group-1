@@ -1,0 +1,12 @@
+<%= t "comments.title" %>
+<% @post.comments.each do |comment| %>
+  <div class="well">
+    <p>
+      <strong>
+        <%= comment.username %>
+      </strong> :
+      <%= comment.body %>
+      <%= link_to t("delete.button"), [comment.post, comment], method: :delete, data:{confirm: t("confirm") } %>
+    </p>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<hr>
+<%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
+<%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
+<hr>
+<%= t "comments.add" %>
+<%= @post.comments.count %>
+<%= render "comments/comments" %>
+<%= render "comments/form" %>

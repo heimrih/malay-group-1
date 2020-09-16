@@ -1,6 +1,5 @@
 en:
   hello: "Hello world"
-
   layouts:
     application:
       title: "Gamer Community"
@@ -45,7 +44,6 @@ en:
     create:
       success_mess_create: "Welcome to Forum of Gamer Community!"
       fail_mess_create: "Account created fail !!!"
-
   sessions:
     new:
       login_title: "Log In"
@@ -57,3 +55,31 @@ en:
       btn_signup: "New User ?"
       signup_now: "Sign Up Now!"
       remember_user: "Remember me in this computer."
+  read:
+    more: "Read More"
+  edit:
+    msg: "Edit"
+  delete:
+    msg: "Delete"
+    button: "[X]"
+  confirm: "Are you sure?"
+  comments:
+    title: "Comment"
+    add: "Add Comment"
+    create: "Comment added"
+    createfail: "Fail to comment"
+    delete: "Comment deleted"
+    deletefail: "Fail to delete"
+  posts:
+    title: "Posts"
+    header: "Create Post"
+    edit: "Edit Posts"
+    add: "Add Posts"
+    update: "Updated"
+    updatefail: "Fail to update"
+    create: "Post Created"
+    createfail: "Fail to create"
+    delete: "Post Deleted"
+    deletefail: "Fail to delete"
+    submit: "Submit"
+    notfound: "Post not found"
