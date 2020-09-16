@@ -2,7 +2,7 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <div class="upload-preview">
-    <img width="250" height="250" alt="Your Avatar">
+    <img width="250" height="250" alt="Your Avatar" src="<%= @user.avatar.url if @user.avatar.present? %>" class="img-circle">
   </div>
 
   <%= f.file_field :avatar, class: "file" %>

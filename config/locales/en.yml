@@ -35,15 +35,36 @@ en:
 
   users:
     users_not_found: "User not found!"
+    login_remind: "Please log in"
     new:
       signup_title: "Sign Up"
-      heading: "Sign Up"
-      description_title: "This will be a sign up page for new users."
       signup_create: "Create my account"
+      heading: "Sign Up"
+    newform:
       confirmation: "Confirmation"
     create:
       success_mess_create: "Welcome to Forum of Gamer Community!"
       fail_mess_create: "Account created fail !!!"
+    update:
+      success_mess_update: "Profile updated"
+      fail_mess_update: "Fail to update profile"
+    destroy:
+      success_mess_delete: "User deleted"
+      fail_mess_delete: "Fail to delete user"
+    edit:
+      edit_title: "Edit User"
+      heading: "Update your profile"
+      edit_change: "Save changes"
+      btn_change: "CHANGE"
+    form:
+      confirmation: "Confirmation"
+    index:
+      index_title: "All Users"
+      heading: "All users"
+    user:
+      delete_link: "Delete"
+      confirm: "You sure?"
+
   sessions:
     new:
       login_title: "Log In"
@@ -55,6 +76,7 @@ en:
       btn_signup: "New User ?"
       signup_now: "Sign Up Now!"
       remember_user: "Remember me in this computer."
+  
   read:
     more: "Read More"
   edit:

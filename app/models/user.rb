@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token
 
+  scope :sort_by_name, ->{order name: :asc}
+
   mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true,
