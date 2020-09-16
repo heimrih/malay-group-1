@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  has_many :posts, dependent: :destroy
+
   scope :sort_by_name, ->{order name: :asc}
 
   mount_uploader :avatar, AvatarUploader

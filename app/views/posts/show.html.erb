@@ -1,10 +1,12 @@
-<h2><%= @post.title %></h2>
+<h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
 <hr>
-<%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
-<%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
+<% if logged_in? && current_user.id == @post.user_id %>
+  <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
+  <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
+<% end %>
 <hr>
-<%= t "comments.add" %>
+<h2><%= t "comments.add" %></h2>
 <%= @post.comments.count %>
 <%= render "comments/comments" %>
 <%= render "comments/form" %>

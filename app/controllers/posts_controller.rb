@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :load_post, except: %i(index new create)
+  before_action :logged_in_user, only: %i(create destroy)
+  before_action :correct_user, only: %i(edit update)
 
   def index
     @posts = Post.order(:created_at).page(params[:page]).per Settings.posts.page.max
@@ -12,11 +14,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new post_params
+    @post = current_user.posts.build post_params
 
     if @post.save
       flash[:success] = t "posts.create"
-      redirect_to @post
+      redirect_to posts_path
     else
       flash.now[:warning] = t "posts.createfail"
       render :new
@@ -28,7 +30,7 @@ class PostsController < ApplicationController
   def update
     if @post.update post_params
       flash[:success] = t "posts.update"
-      redirect_to @post
+      redirect_to posts_path
     else
       flash.now[:warning] = t "posts.updatefail"
       render :edit
@@ -52,6 +54,22 @@ class PostsController < ApplicationController
 
   def load_post
     @post = Post.find_by id: params[:id]
+    return if @post
+
+    flash[:warning] = t "posts.notfound"
+    redirect_to root_path
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t "users.login_remind"
+    redirect_to login_path
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by id: params[:id]
     return if @post
 
     flash[:warning] = t "posts.notfound"
