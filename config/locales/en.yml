@@ -108,6 +108,8 @@ en:
     deletefail: "Fail to delete"
     submit: "Submit"
     notfound: "Post not found"
+    created_at: "Posted by "
+    ago:  " ago"
 
   user_mailer:
     account_activation:
