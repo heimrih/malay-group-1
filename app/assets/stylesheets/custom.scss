@@ -207,3 +207,8 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}

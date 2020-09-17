@@ -10,8 +10,13 @@
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+  <% if logged_in? %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", readonly: true %>
+  <% else %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  <% end %>
 
   <%= f.label :password %>
   <%= f.password_field :password, class: "form-control" %>
