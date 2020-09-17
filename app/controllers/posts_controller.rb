@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: %i(edit update)
 
   def index
-    @posts = Post.order(:created_at).page(params[:page]).per Settings.posts.page.max
+    @posts = Post.order(created_at: :desc).page(params[:page]).per Settings.posts.page.max
   end
 
   def show; end
