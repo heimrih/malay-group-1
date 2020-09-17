@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
         params[:session][:remember_me].eql? Settings.collections.session_controller_create ? remember(user) : forget(user)
         redirect_back_or user
       else
-        flash[:warning] = t ".sessions.create.warn_mess_session"
+        flash[:warning] = t ".warn_mess_session"
         redirect_to root_path
       end
     else
-      flash.now[:danger] = t "sessions.create.fail_mess_session"
+      flash.now[:danger] = t ".fail_mess_session"
       render :new
     end
   end

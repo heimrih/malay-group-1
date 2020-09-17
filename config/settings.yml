@@ -15,6 +15,7 @@ validations:
 
 collections:
   session_controller_create: 1
+  ps_reset_expired_time_in_hours: 2
 
 users:
   image:
@@ -23,6 +24,8 @@ users:
   default_image:
     list: 50
   icon: 30
+  page:
+    default_page: 10
 
 posts:
   page:
