@@ -7,6 +7,6 @@
 <% end %>
 <hr>
 <h2><%= t "comments.add" %></h2>
-<%= @post.comments.count %>
+<%= pluralize @post.comments.size, t("comments.title") %>
 <%= render "comments/comments" %>
 <%= render "comments/form" %>

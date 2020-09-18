@@ -95,6 +95,9 @@ en:
     createfail: "Fail to comment"
     delete: "Comment deleted"
     deletefail: "Fail to delete"
+    symbol: " : "
+    created_at: "commented "
+    ago:  " ago"
   posts:
     title: "Posts"
     header: "Create Post"

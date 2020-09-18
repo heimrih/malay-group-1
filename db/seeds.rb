@@ -17,3 +17,10 @@ User.create!(name: "Example User",
               activated: true,
               activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+20.times do |n|
+  title = "Post #{n+1}"
+  body = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.posts.create!(title: title, body: body) }
+end
