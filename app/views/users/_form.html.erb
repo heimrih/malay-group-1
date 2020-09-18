@@ -13,13 +13,16 @@
   <% if logged_in? %>
     <%= f.label :email %>
     <%= f.email_field :email, class: "form-control", readonly: true %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: t(".ps_placeholder"), class: "form-control" %>
   <% else %>
     <%= f.label :email %>
     <%= f.email_field :email, class: "form-control" %>
-  <% end %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+  <% end %>
 
   <%= f.label :password_confirmation, t(".confirmation") %>
   <%= f.password_field :password_confirmation, class: "form-control" %>

@@ -58,6 +58,7 @@ en:
       edit_change: "Save changes"
       btn_change: "CHANGE"
     form:
+      ps_placeholder: "Leave it blank if you want to remain current password"
       confirmation: "Confirmation"
     index:
       index_title: "All Users"
@@ -65,9 +66,10 @@ en:
     user:
       delete_link: "Delete"
       confirm: "You sure?"
+      last_signin: "Last sign in at: "
     show:
       prefix_count: "Posts"
-
+      
   sessions:
     new:
       login_title: "Log In"
