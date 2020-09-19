@@ -65,6 +65,8 @@ en:
     user:
       delete_link: "Delete"
       confirm: "You sure?"
+    show:
+      prefix_count: "Posts"
 
   sessions:
     new:
@@ -86,7 +88,7 @@ en:
     msg: "Edit"
   delete:
     msg: "Delete"
-    button: "[X]"
+    button: "Delete"
   confirm: "Are you sure?"
   comments:
     title: "Comment"

@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @users = User.sort_by_name.page(params[:page]).per(Settings.users.page.default_page)
   end
 
-  def show; end
+  def show
+    @posts = @user.posts.sort_by_time.page(params[:page]).per Settings.posts.page.max
+  end
 
   def new
     @user = User.new

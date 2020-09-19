@@ -18,3 +18,13 @@
     </section>
   </aside>
 </div>
+
+<div class="container">
+  <% if @user.posts.any? %>
+    <h3><%= t ".prefix_count" %> (<%= @user.posts.count %>)</h3>
+    <div class="well">
+      <%= render @posts %>
+    </div>
+    <%= paginate @posts %>
+  <% end %>
+</div>

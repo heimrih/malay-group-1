@@ -30,3 +30,10 @@ users:
 posts:
   page:
     max: 5
+
+blob:
+  image:
+    min_length: 800
+    min_width: 600
+    max_length: 1024
+    max_width: 768
