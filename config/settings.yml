@@ -30,6 +30,8 @@ users:
 posts:
   page:
     max: 5
+  view:
+    inc: 1
 
 blob:
   image:

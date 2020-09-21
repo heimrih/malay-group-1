@@ -8,5 +8,6 @@
 <hr>
 <h2><%= t "comments.add" %></h2>
 <%= pluralize @post.comments.size, t("comments.title") %>
+<%= pluralize @post.views, t("posts.views") %>
 <%= render "comments/comments" %>
 <%= render "comments/form" %>
