@@ -39,3 +39,7 @@ blob:
     min_width: 600
     max_length: 1024
     max_width: 768
+
+conversation:
+  truncate:
+    length: 145

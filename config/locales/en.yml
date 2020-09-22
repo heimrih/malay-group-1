@@ -15,6 +15,7 @@ en:
       symbol_header: "More"
       help_header: "Help"
       about_header: "About"
+      inbox: "Inbox"
 
   static_pages:
     home:
@@ -69,7 +70,7 @@ en:
       last_signin: "Last sign in at: "
     show:
       prefix_count: "Posts"
-      
+
   sessions:
     new:
       login_title: "Log In"
@@ -162,3 +163,36 @@ en:
       forgot_title: "Forgot pasword"
       heading: "Forgot password"
       forgot_submit: "Submit"
+
+  mailbox:
+    folder_view:
+      compose: "Compose"
+      title: "Compose Message"
+    inbox:
+      title: "Inbox"
+    sent:
+      title: "Sent"
+    trash:
+      title: "Trash"
+
+  conversations:
+    create:
+      success_mess: "Your message was successfully sent!"
+    reply:
+      succ_mess: "Your reply message was successfully sent!"
+    conversation:
+      subj: "Subject: "
+      date: "Date: "
+      view: "View"
+    show:
+      compose: "Compose"
+      trash: "Move to trash"
+      untrash: "Untrash"
+      confirm: "Are you sure?"
+      placeholder: "Reply Message"
+      reply: "Reply"
+      sent: "Sent"
+    form:
+      placeholder1: "Subject"
+      placeholder2: "Type your message here"
+      send: "Send Message"

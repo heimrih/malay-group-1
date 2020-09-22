@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to t("posts.header"), new_post_path %></li>
+          <li><%= link_to t(".inbox"), mailbox_inbox_path %></li>
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", data: { "toggle" => "dropdown"}} do %>
               <%= image_tag gravatar_for(current_user), size: Settings.users.icon, class: "img-circle" %>

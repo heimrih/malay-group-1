@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     get "/about", to: "static_pages#about"
     get "/signup", to: "users#new"
     get "/login", to: "sessions#new"
+    get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+    get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+    get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users
@@ -12,6 +15,14 @@ Rails.application.routes.draw do
     resources :password_resets, except: %i(index show destroy)
     resources :posts do
       resources :comments
+    end
+
+    resources :conversations do
+      member do
+        post :reply
+        post :trash
+        post :untrash
+      end
     end
   end
 end
