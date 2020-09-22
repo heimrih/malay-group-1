@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc).page(params[:page]).per Settings.posts.page.max
   end
 
-  def show; end
+  def show
+    Post.update_counters [@post.id], views: Settings.posts.view.inc
+  end
 
   def new
     @post = Post.new

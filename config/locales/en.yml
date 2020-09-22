@@ -117,6 +117,7 @@ en:
     notfound: "Post not found"
     created_at: "Posted by "
     ago:  " ago"
+    views: " Views"
 
   user_mailer:
     account_activation:
