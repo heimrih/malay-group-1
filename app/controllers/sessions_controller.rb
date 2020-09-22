@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     if user&.authenticate params[:session][:password]
       if user.activated?
         log_in user
+        user.update_attribute(:last_sign_in_at, Time.zone.now)
         params[:session][:remember_me].eql? Settings.collections.session_controller_create ? remember(user) : forget(user)
         redirect_back_or user
       else

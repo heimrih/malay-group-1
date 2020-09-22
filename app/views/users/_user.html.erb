@@ -1,6 +1,18 @@
 <li>
-  <%= image_tag gravatar_for(user), size: Settings.users.default_image.list, class: "img-circle" %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %> | <%= link_to t(".delete_link"), user, method: :delete, data: { confirm: t(".confirm") } %>
-  <% end %>
+  <dir class="image_index">
+    <%= image_tag gravatar_for(user), size: Settings.users.default_image.list, class: "img-circle" %>
+  </dir>
+
+  <dir class="user_index">
+    <div>
+      <%= link_to user.name, user %>
+      <% if current_user.admin? && !current_user?(user) %> | <%= link_to t(".delete_link"), user, method: :delete, data: { confirm: t(".confirm") } %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= t ".last_signin" %> 
+      <%= time_tag user.last_sign_in_at %>
+    </div>
+  </dir>
 </li>

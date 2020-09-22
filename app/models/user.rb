@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   USERS_PARAMS = %i(avatar name email password password_confirmation).freeze
 
-  attr_accessor :remember_token, :activation_token, :reset_token
+  attr_accessor :remember_token, :activation_token, :reset_token, :update_last_sign_in_at
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
