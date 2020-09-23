@@ -1,13 +1,21 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
-<hr>
-<% if logged_in? && current_user.id == @post.user_id %>
-  <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
-  <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
-<% end %>
-<hr>
-<h2><%= t "comments.add" %></h2>
-<%= pluralize @post.comments.size, t("comments.title") %>
-<%= pluralize @post.views, t("posts.views") %>
-<%= render "comments/comments" %>
-<%= render "comments/form" %>
+<div class="container">
+  <h1><%= @post.title %></h1>
+      <p><%= @post.body %></p>
+      <% if logged_in? && current_user.id == @post.user_id %>
+        <hr>
+        <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
+        <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
+      <% end %>
+
+      <hr>
+</div>
+<div class="container">
+  <%= pluralize @post.views, t("posts.views") %>
+  <%= pluralize @post.comments.size, t("comments.title") %>
+  <%= pluralize @post.activities.like.size, t("activity.like") %>
+  <h2><%= t "comments.add" %></h2>
+  <%= render "comments/comments" %>
+  <%= render "activities/selectform" %>
+  <%= render "comments/form" %>
+  <%= render "activities/activity" %>
+</div>

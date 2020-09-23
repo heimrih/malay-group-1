@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :password_resets, except: %i(index show destroy)
     resources :posts do
       resources :comments
+      resources :activities
     end
 
     resources :conversations do

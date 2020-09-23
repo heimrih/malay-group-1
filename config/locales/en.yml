@@ -119,6 +119,18 @@ en:
     created_at: "Posted by "
     ago:  " ago"
     views: " Views"
+  activity:
+    title: "Activities"
+    create: "Activity created"
+    createfail: "Fail to create"
+    delete: "Activity deleted"
+    deletefail: "Fail to delete"
+    update: "Activity updated"
+    updatefail: "Fail to update"
+    nil: "Don't have activities for this post"
+    user: "User: "
+    act: "Activity: "
+    like: " Like"
 
   user_mailer:
     account_activation:
