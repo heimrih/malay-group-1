@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :activities, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   scope :sort_by_name, ->{order name: :asc}
 
