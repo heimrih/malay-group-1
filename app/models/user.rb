@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token, :update_last_sign_in_at
 
+  acts_as_messageable
+
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 
@@ -72,6 +74,14 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.collections.ps_reset_expired_time_in_hours
+  end
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
   end
 
   private

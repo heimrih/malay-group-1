@@ -15,5 +15,8 @@ module MalayGroup1
 
     config.i18n.default_locale = :en # language default project
     I18n.available_locales = [:en] # define all laguage that you project allow
+
+    config.time_zone = 'Kuala Lumpur'
+    config.active_record.default_timezone = :local
   end
 end

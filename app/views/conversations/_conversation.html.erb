@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="media-left">
+    <div class="media-left">
+      <%= image_tag conversation.originator.avatar.url, size: Settings.users.default_image.list, class: "img-circle" %>
+    </div>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= conversation.originator.name %> <br>
+      <small><b><%= t ".subj" %></b><%= conversation.subject %></small><br>
+      <small><b><%= t ".date" %></b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
+    </h4>
+    <%= truncate conversation.messages.last.body, length: Settings.conversation.truncate.length %>
+    <%= link_to t(".view"), conversation_path(conversation)  %>
+  </div>
+</div>
