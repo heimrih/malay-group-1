@@ -1,0 +1,24 @@
+<div class="well">
+  <% if @activities.any? %>
+    <h2><%= t "activity.title" %></h2>
+    <% @activities.each do |activity| %>
+      <div class="row">
+        <span>
+          <%= t "activity.user" %>
+          <%= activity.user.name %>
+        </span>
+        <br/>
+        <span>
+          <%= t "activity.act" %>
+          <%= activity.field %>
+        </span>
+        <br/>
+        <% if logged_in? && @current_user.activities.find_by(id: activity.id).present? %>
+          <%= link_to "Un-#{activity.field}", post_activity_path(post_id: @post.id, id: activity.id), method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= t "activity.nil" %>
+  <% end %>
+</div>

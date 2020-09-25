@@ -9,6 +9,9 @@ class PostsController < ApplicationController
 
   def show
     Post.update_counters [@post.id], views: Settings.posts.view.inc
+
+    # get all activities and user has activity of this post.
+    @activities = @post.activities.includes :user
   end
 
   def new
