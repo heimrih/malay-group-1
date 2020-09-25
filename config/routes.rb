@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en/ do
     root "posts#index"
+    get "notifications/:id/link_through", to: "notifications#link_through", as: :link_through
+    get "notifications", to: "notifications#index"
     get "/help", to: "static_pages#help"
     get "/about", to: "static_pages#about"
     get "/signup", to: "users#new"
@@ -17,7 +19,6 @@ Rails.application.routes.draw do
       resources :comments
       resources :activities
     end
-
     resources :conversations do
       member do
         post :reply
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
         post :untrash
       end
     end
+    resources :notifications, only: :edit
   end
 end

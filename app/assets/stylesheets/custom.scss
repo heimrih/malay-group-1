@@ -81,6 +81,11 @@ p {
   margin-top: -4px;
 }
 
+.number {
+  margin-top: -28px;
+  margin-left: -10px;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -228,4 +233,33 @@ input {
 
 .spacer {
   margin-top :5px;
+}
+
+/* NOTIFICATIONS */
+
+.notification-dropdown {
+  margin-top: 10px;
+  button {
+    border: none;
+  }
+}
+
+.notification-index-list {
+  margin-top: 5em;
+  list-style: none;
+  li {
+    margin-top: 1em;
+    background-color: $very-light-purple;
+    padding: 1em;
+  }
+}
+
+.noti_index {
+  text-align: center;
+}
+
+.number_unread {
+  margin-top: -34px;
+  margin-left: 17px;
+  color: $white;
 }

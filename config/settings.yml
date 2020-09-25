@@ -43,3 +43,6 @@ blob:
 conversation:
   truncate:
     length: 145
+
+notification:
+  default_page: 8

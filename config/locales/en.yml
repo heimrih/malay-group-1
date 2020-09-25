@@ -16,6 +16,7 @@ en:
       help_header: "Help"
       about_header: "About"
       inbox: "Inbox"
+      notification_index: "View All"
 
   static_pages:
     home:
@@ -208,3 +209,10 @@ en:
       placeholder1: "Subject"
       placeholder2: "Type your message here"
       send: "Send Message"
+
+  notifications:
+    notification:
+      ago: "ago"
+    index:
+      notifi_index_title: "Notifications"
+      heading: "Notifications"
