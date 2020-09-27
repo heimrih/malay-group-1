@@ -1,0 +1,5 @@
+<div class="container">
+  <h1><%= @topic.name %></h1>
+        <%= link_to t("delete.msg"), topic_path, method: :delete, data:{confirm: t("confirm") }, class: "btn btn-danger" %>
+      <hr>
+</div>

@@ -1,0 +1,9 @@
+<%= t "topic.title" %>
+<% @topics.each do |topic| %>
+  <li class="nav-item">
+  <%= link_to topic.name, posts_path(:top => topic.id) %>
+  <span class="badge badge-primary badge-pill">
+    <%= topic.posts.count %>
+  </span>
+  </li>
+<% end %>

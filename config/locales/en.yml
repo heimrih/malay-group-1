@@ -137,6 +137,12 @@ en:
     user: "User: "
     act: "Activity: "
     like: " Like"
+  topic:
+    title: "Topics: "
+    create: "Topic created"
+    createfail: "Fail to create"
+    delete: "Topic deleted"
+    deletefail: "Fail to delete"
 
   user_mailer:
     account_activation:

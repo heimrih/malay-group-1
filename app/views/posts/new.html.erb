@@ -4,11 +4,19 @@
   <%= form_for :post, url: posts_path do |f| %>
     <%= render "shared/error_postmessages" %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-    <%= f.label :body %>
-    <%= f.rich_text_area :body, class: "form-control", style: "overflow: auto; resize: vertical"  %>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.rich_text_area :body, class: "form-control", style: "overflow: auto; resize: vertical"  %>
+    </div>
+
+    <div class="form-group">
+      <%= f.collection_select :topic_id, Topic.all, :id, :name, :prompt => "Game Topic" %>
+    </div>
 
     <%= f.submit t("posts.submit"), class: "btn btn-primary", style: "margin-top: 6px"  %>
   <% end %>

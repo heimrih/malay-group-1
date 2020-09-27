@@ -7,8 +7,8 @@
       <p><%= @post.body %></p>
       <% if logged_in? && current_user.id || current_user.admin == @post.user_id %>
         <hr>
-        <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
-        <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
+        <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-primary" %>
+        <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-danger" %>
       <% end %>
 
       <hr>

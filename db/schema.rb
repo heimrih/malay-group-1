@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_075255) do
+ActiveRecord::Schema.define(version: 2020_09_27_095045) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -139,7 +139,14 @@ ActiveRecord::Schema.define(version: 2020_09_23_075255) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.integer "views", default: 0
+    t.integer "topic_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
