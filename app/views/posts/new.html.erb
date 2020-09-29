@@ -1,14 +1,15 @@
+<% provide :title, t("posts.main") %>
 <div class="well">
   <h1><%= t "posts.add" %></h1>
   <%= form_for :post, url: posts_path do |f| %>
     <%= render "shared/error_postmessages" %>
 
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
 
-      <%= f.label :body %>
-        <%= f.rich_text_area :body, class: "form-control" %>
+    <%= f.label :body %>
+    <%= f.rich_text_area :body, class: "form-control", style: "overflow: auto; resize: vertical"  %>
 
-    <%= f.submit t("posts.submit"), class: "btn btn-primary" %>
+    <%= f.submit t("posts.submit"), class: "btn btn-primary", style: "margin-top: 6px"  %>
   <% end %>
 </div>

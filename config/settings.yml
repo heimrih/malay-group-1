@@ -46,3 +46,5 @@ conversation:
 
 notification:
   default_page: 8
+activities:
+  per_page_10: 10

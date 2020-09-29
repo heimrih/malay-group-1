@@ -2,16 +2,14 @@
   <h1><%= t "posts.edit" %></h1>
   <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
     <%= render "shared/error_postmessages" %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title, class: "form-control" %>
-    </p>
-    <p>
-      <%= f.label :body %><br>
-      <%= f.rich_text_area :body, class: "form-control" %>
-    </p>
-    <p>
-      <%= f.submit t("posts.submit"), class: "btn btn-primary" %>
-    </p>
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+
+
+    <%= f.label :body %><br>
+    <%= f.rich_text_area :body, class: "form-control", style: "overflow: auto; resize: vertical" %>
+
+    <%= f.submit t("posts.submit"), class: "btn btn-primary" %>
   <% end %>
 </div>

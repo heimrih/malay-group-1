@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     Post.update_counters [@post.id], views: Settings.posts.view.inc
 
     # get all activities and user has activity of this post.
-    @activities = @post.activities.includes :user
+    @activities = @post.activities.includes(:user).page(params[:page]).per Settings.activities.per_page_10
   end
 
   def new

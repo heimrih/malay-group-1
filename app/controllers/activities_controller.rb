@@ -12,8 +12,9 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = @post.activities.create activity_params.merge user_id: current_user.id
+    @activity = @post.activities.build field: params[:activity][:field].to_i, user_id: current_user.id
     if @activity.save
+      create_notification(@post, @field) if  (params[:activity][:field].to_i == Activity.fields[:like])
       flash[:success] = t "activity.create"
       redirect_to post_path id: params[:post_id]
     else
@@ -44,7 +45,19 @@ class ActivitiesController < ApplicationController
     redirect_to post_path @post
   end
 
+
   private
+
+  def create_notification(post, field)
+    return if post.user.id == current_user.id
+
+    Notification.create(user_id: post.user.id,
+                        notified_by_id: current_user.id,
+                        post_id: post.id,
+                        identifier: @activity_id,
+                        notice_type: :lik)
+
+  end
 
   def activity_params
     params.require(:activity).permit :field

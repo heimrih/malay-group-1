@@ -1,6 +1,6 @@
 <%= form_for [@post, @post.activities.build] do |f| %>
     <%= f.label :field, t("activity.title") %><br>
-    <%= f.select :field, Activity.fields.keys.map { |w| [w.humanize, w] } %>
+    <%= f.select :field, Activity.fields.map { |w, k| [w.humanize, k] } %>
 
     <p>
     <%= f.submit class: "btn btn-default" %>

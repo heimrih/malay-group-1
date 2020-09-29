@@ -1,8 +1,8 @@
-<div class="well">
+<div class="w3-sidebar w3-light-grey w3-bar-block">
   <% if @activities.any? %>
     <h2><%= t "activity.title" %></h2>
-    <% @activities.each do |activity| %>
-      <div class="row">
+    <div class="row">
+      <% @activities.each do |activity| %>
         <span>
           <%= t "activity.user" %>
           <%= activity.user.name %>
@@ -16,9 +16,12 @@
         <% if logged_in? && @current_user.activities.find_by(id: activity.id).present? %>
           <%= link_to "Un-#{activity.field}", post_activity_path(post_id: @post.id, id: activity.id), method: :delete %>
         <% end %>
-      </div>
-    <% end %>
+        <hr/>
+      <% end %>
+    <%= paginate @activities %>
+    </div>
+
   <% else %>
-    <%= t "activity.nil" %>
+    <h2><%= t "activity.nil" %></h2>
   <% end %>
 </div>

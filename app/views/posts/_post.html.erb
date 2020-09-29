@@ -7,3 +7,6 @@
 <%= time_ago_in_words post.created_at %>
 <%= t "posts.ago" %><br>
 <%= link_to t("read.more"), post_path(post), class: "btn btn-default" %>
+<span><%= post.activities.like.size %> likes | </span>
+<span><%= post.activities.mark.size %> marks | </span>
+<span><%= post.activities.report.size %> reports</span>
