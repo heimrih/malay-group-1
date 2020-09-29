@@ -1,6 +1,6 @@
 <%= form_for [@post, @post.comments.build] do |f| %>
   <p>
-    <%= f.rich_text_area :body, class: "form-control" %>
+    <%= f.rich_text_area :body, class: "form-control", style: "overflow: auto; resize: vertical" %>
   </p>
 
   <p>

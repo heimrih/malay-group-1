@@ -1,30 +1,95 @@
 <% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-8">
-    <section class="user_info">
-      <h1>
-        <dir class="image">
-          <% if @user.avatar? %>
-            <%= image_tag @user.avatar.url, height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
-          <% else %>
-            <%= image_tag "default.png", height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
-          <% end %>
-        </dir>
-        <dir class="user-info">
-          <div><%= @user.name %></div>
-          <div><%= @user.email %></div>
-        </dir>
-      </h1>
-    </section>
-  </aside>
-</div>
-
 <div class="container">
-  <% if @user.posts.any? %>
-    <h3><%= t ".prefix_count" %> (<%= @user.posts.count %>)</h3>
-    <div class="well">
-      <%= render @posts %>
+  <div class="row">
+    <aside class="col-md-8">
+      <section class="user_info">
+        <h1>
+          <dir class="image">
+            <% if @user.avatar? %>
+              <%= image_tag @user.avatar.url, height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
+            <% else %>
+              <%= image_tag "default.png", height: Settings.users.image.height, width: Settings.users.image.width, class: "img-circle" %>
+            <% end %>
+          </dir>
+          <dir class="user-info">
+            <div><%= @user.name %></div>
+            <div><%= @user.email %></div>
+          </dir>
+        </h1>
+      </section>
+    </aside>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="card mt-3 tab-card">
+        <div class="card-header tab-card-header">
+          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false"><%= Activity.fields.keys[1].humanize %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false"><%= Activity.fields.keys[0].humanize %></a>
+            </li>
+            <% if current_user.admin? %>
+              <li class="nav-item">
+                  <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four" aria-selected="false"><%= Activity.fields.keys[2].humanize %></a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+            <h3><%= t ".post_count" %> (<%= @user.posts.count %>)</h3>
+            <div class="well">
+              <div id="posts-tab" class="row">
+                <%= render @posts %>
+              </div>
+            </div>
+            <div id="paginage-posts-tab">
+              <%= paginate @posts, remote: true %>
+            </div>
+          </div>
+
+          <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+            <h3><%= t ".like_count" %> (<%= @user.activities.like.count %>)</h3>
+            <% @user.activities.like.each do |activity| %>
+              <div class="well">
+                <div class="row">
+                  <span><%= activity.post.title %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+            <h3><%= t ".mark_count" %> (<%= @user.activities.mark.count %>)</h3>
+            <% @user.activities.mark.each do |activity| %>
+              <div class="well">
+                <div class="row">
+                  <span><%= activity.post.title %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane fade p-4" id="four" role="tabpanel" aria-labelledby="four-tab">
+            <h3><%= t ".report_count" %> (<%= @user.activities.report.count %>)</h3>
+            <% @user.activities.report.each do |activity| %>
+              <div class="well">
+                <div class="row">
+                  <span><%= activity.post.title %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <%= paginate @posts %>
-  <% end %>
+  </div>
 </div>

@@ -71,7 +71,10 @@ en:
       confirm: "You sure?"
       last_signin: "Last sign in at: "
     show:
-      prefix_count: "Posts"
+      post_count: "Posts"
+      like_count: "Likes"
+      mark_count: "Marks"
+      report_count: "Reports"
 
   sessions:
     new:
@@ -121,6 +124,7 @@ en:
     created_at: "Posted by "
     ago:  " ago"
     views: " Views"
+    main: "New Post"
   activity:
     title: "Activities"
     create: "Activity created"

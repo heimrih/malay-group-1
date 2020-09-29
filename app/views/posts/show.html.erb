@@ -1,7 +1,11 @@
-<div class="container">
+<% content_for(:sidebar) do %>
+  <%= render :partial => "activities/activity" %>
+<% end %>
+
+<div class="col-md-6 col-md-offset-3">
   <h1><%= @post.title %></h1>
       <p><%= @post.body %></p>
-      <% if logged_in? && current_user.id == @post.user_id %>
+      <% if logged_in? && current_user.id || current_user.admin == @post.user_id %>
         <hr>
         <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-default" %>
         <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-primary" %>
@@ -9,7 +13,7 @@
 
       <hr>
 </div>
-<div class="container">
+<div class="col-md-6 col-md-offset-3">
   <%= pluralize @post.views, t("posts.views") %>
   <%= pluralize @post.comments.size, t("comments.title") %>
   <%= pluralize @post.activities.like.size, t("activity.like") %>
@@ -17,5 +21,4 @@
   <%= render "comments/comments" %>
   <%= render "activities/selectform" %>
   <%= render "comments/form" %>
-  <%= render "activities/activity" %>
 </div>

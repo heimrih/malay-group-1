@@ -1,0 +1,3 @@
+$('#paginage-posts-tab').html('<%= j paginate(@posts, remote: true) %>');
+$('#posts-tab').html('<%= j render @posts %>');
+$('#one-tab').click();

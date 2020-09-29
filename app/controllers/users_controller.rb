@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts.sort_by_time.page(params[:page]).per Settings.posts.page.max
+    @posts = @user.posts.sort_by_time.page(params[:page]).per 2
   end
 
   def new
