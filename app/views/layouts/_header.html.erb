@@ -36,7 +36,8 @@
             <% end %>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li><%= link_to t(".users_header"), users_path %><li>
+                <li><%= link_to t(".users_header"), users_path %></li>
+                <li><%= link_to t(".statistic_header"), statistic_path %>
               <% end %>
                 <li><%= link_to t(".profile_header"), current_user %></li>
                 <li><%= link_to t(".setting_header"), edit_user_path(current_user) %></li>

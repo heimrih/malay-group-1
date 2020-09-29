@@ -17,6 +17,7 @@ en:
       about_header: "About"
       inbox: "Inbox"
       notification_index: "View All"
+      statistic_header: "Statistic"
 
   static_pages:
     home:
@@ -216,3 +217,10 @@ en:
     index:
       notifi_index_title: "Notifications"
       heading: "Notifications"
+
+  statistics:
+    index:
+      statistic_title: "Statistic"
+      heading: "Chart"
+      user_chart: "User Chart"
+      post_chart: "Post Chart"

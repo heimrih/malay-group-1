@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
     get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
     get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+    get "/statistic", to: "statistics#index"
+    get "users/chart", to: "charts#user", as: :chart_user
+    get "posts/chart", to: "charts#user", as: :chart_post
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users
