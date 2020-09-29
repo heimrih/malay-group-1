@@ -4,7 +4,5 @@ class Activity < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  scope :field, (lambda |field| do
-    where(field: fields[field])
-  end)
+  scope :field, ->(field) {where(field: fields[field])}
 end
