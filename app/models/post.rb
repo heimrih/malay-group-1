@@ -10,4 +10,8 @@ class Post < ApplicationRecord
   scope :sort_by_time, ->{order created_at: :desc}
   scope :lastest, ->{order created_at: :desc}
   scope :by_top, ->(topic_id){where topic_id: topic_id if topic_id.present?}
+
+  scope :search_by, (lambda do |params|
+      where("LOWER(title) LIKE :key OR LOWER(body) LIKE :key", key: "%#{params}%")
+    end)
 end
