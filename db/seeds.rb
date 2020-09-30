@@ -20,11 +20,17 @@ User.create!(name: "Example User",
               last_sign_in_at: Time.zone.now)
 end
 
+
+Topic.create!(name: "Dota")
+Topic.create!(name: "Counter Strike")
+Topic.create!(name: "Minecraft")
+
 users = User.order(:created_at).take(6)
 3.times do |n|
   title = "Post #{n+1}"
   body = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.posts.create!(title: title, body: body) }
+  topic_id = "#{n+1}"
+  users.each { |user| user.posts.create!(title: title, body: body, topic_id: topic_id) }
 end
 
 
@@ -33,8 +39,9 @@ end
 users = User.all
 users.each do |user|
   user.posts.create!(
-    title: "This post of #{user.name}user",
-    body: "body of post #{user.id}"
+    title: "This post of #{user.name}",
+    body: "body of post #{user.id}",
+    topic_id: "1"
   )
 end
 
@@ -46,4 +53,3 @@ users.each do |user|
     field: rand(0..2)
   )
 end
-

@@ -1,3 +1,8 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render "topics/nav" %>
+  </div>
+</div>
 <% provide :title, t("posts.title") %>
 <% @posts.each do |post| %>
   <div class="well">
@@ -12,4 +17,6 @@
     <%= link_to t("read.more"), post_path(post), class: "btn btn-default" %>
   </div>
 <% end %>
-<%= paginate @posts %>
+<div class="pagination">
+  <%= paginate @posts %>
+</div>

@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   before_action :correct_user, only: %i(edit update)
 
   def index
-    @posts = Post.order(created_at: :desc).page(params[:page]).per Settings.posts.page.max
+    @topics = Topic.lastest
+
+    top = params[:top]
+
+    @posts = Post.by_top(top).lastest.page(params[:page]).per Settings.posts.page.max
   end
 
   def show
@@ -54,7 +58,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :title, :body
+    params.require(:post).permit :title, :body, :topic_id
   end
 
   def load_post
