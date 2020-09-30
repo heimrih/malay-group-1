@@ -1,31 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
-    <%= render "topics/nav" %>
-  </div>
-</div>
-<div class="container">
-  <%= t "search.title" %>
-  <%= form_tag "", url: posts_path, role: "search", method: :get do %>
-    <p>
-      <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
-      <%= submit_tag :search %>
-    </p>
-  <% end %>
-</div>
 <% provide :title, t("posts.title") %>
-<% @posts.each do |post| %>
-  <div class="well">
-    <h1><%= post.title %></h1>
-    <p>
-      <h2><%= post.body %></h2>
-    </p>
-    <%= t "posts.created_at" %>
-    <%= link_to post.user.name, post.user %>
-    <%= time_ago_in_words post.created_at %>
-    <%= t "posts.ago" %><br>
-    <%= link_to t("read.more"), post_path(post), class: "btn btn-default" %>
+
+<div class="col-md-3">
+  <div class="search">
+    <%= t "search.title" %>
+    <%= form_tag "", url: posts_path, role: "search", method: :get do %>
+      <p>
+        <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
+        <%= submit_tag :search %>
+      </p>
+    <% end %>
   </div>
-<% end %>
-<div class="pagination">
-  <%= paginate @posts %>
+  <%= render :partial => "topics/nav" %>
+</div>
+
+<div class="col-md-7">
+  <%= render "posts/list" %>
+  <div class="pagination">
+    <%= paginate @posts %>
+  </div>
 </div>

@@ -26,17 +26,17 @@
         <div class="card-header tab-card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Post</a>
+              <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false"><%= Activity.fields.keys[1].humanize %></a>
+              <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false"><%= Activity.fields.keys[1].humanize %></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false"><%= Activity.fields.keys[0].humanize %></a>
+              <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false"><%= Activity.fields.keys[0].humanize %></a>
             </li>
             <% if current_user.admin? %>
               <li class="nav-item">
-                  <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four" aria-selected="false"><%= Activity.fields.keys[2].humanize %></a>
+                <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four" aria-selected="false"><%= Activity.fields.keys[2].humanize %></a>
               </li>
             <% end %>
           </ul>
@@ -60,7 +60,7 @@
             <% @user.activities.like.each do |activity| %>
               <div class="well">
                 <div class="row">
-                  <span><%= activity.post.title %></span>
+                  <%= link_to activity.post.title, post_path(activity.post) %>
                 </div>
               </div>
             <% end %>
@@ -71,23 +71,22 @@
             <% @user.activities.mark.each do |activity| %>
               <div class="well">
                 <div class="row">
-                  <span><%= activity.post.title %></span>
+                  <%= link_to activity.post.title, post_path(activity.post) %>
                 </div>
               </div>
             <% end %>
           </div>
 
           <div class="tab-pane fade p-4" id="four" role="tabpanel" aria-labelledby="four-tab">
-            <h3><%= t ".report_count" %> (<%= @user.activities.report.count %>)</h3>
-            <% @user.activities.report.each do |activity| %>
+            <h3><%= t ".report_count" %> (<%= Activity.report.count %>)</h3>
+            <% Activity.report.each do |activity| %>
               <div class="well">
                 <div class="row">
-                  <span><%= activity.post.title %></span>
+                  <%= link_to activity.post.title, post_path(activity.post) %>
                 </div>
               </div>
             <% end %>
           </div>
-
         </div>
       </div>
     </div>

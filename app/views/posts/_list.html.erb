@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+  <div class="well">
+    <h1><%= post.title %></h1>
+    <p>
+      <h2><%= post.body %></h2>
+    </p>
+    <h5>
+      <%= t "posts.created_at" %>
+      <%= link_to post.user.name, post.user %>
+      <%= time_ago_in_words post.created_at %>
+      <%= t "posts.ago" %><br>
+    </h5>
+    <%= link_to t("read.more"), post_path(post), class: "btn btn-default" %>
+  </div>
+<% end %>
