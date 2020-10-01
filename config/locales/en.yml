@@ -143,6 +143,8 @@ en:
     createfail: "Fail to create"
     delete: "Topic deleted"
     deletefail: "Fail to delete"
+  search:
+    title: "Search Title: "
 
   user_mailer:
     account_activation:

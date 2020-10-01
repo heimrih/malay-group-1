@@ -3,6 +3,15 @@
     <%= render "topics/nav" %>
   </div>
 </div>
+<div class="container">
+  <%= t "search.title" %>
+  <%= form_tag "", url: posts_path, role: "search", method: :get do %>
+    <p>
+      <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
+      <%= submit_tag :search %>
+    </p>
+  <% end %>
+</div>
 <% provide :title, t("posts.title") %>
 <% @posts.each do |post| %>
   <div class="well">
