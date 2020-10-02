@@ -1,4 +1,5 @@
 <%= form_for :topic, url: topics_path do |f| %>
+  <h1><%= t "topic.topic_new" %></h1>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>

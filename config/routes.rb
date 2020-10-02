@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "/statistic", to: "statistics#index"
     get "users/chart", to: "statistics#user", as: :chart_user
     get "posts/chart", to: "statistics#post", as: :chart_post
+    get "topics/new", to: "topics#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users

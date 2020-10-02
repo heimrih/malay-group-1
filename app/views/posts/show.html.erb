@@ -5,7 +5,7 @@
 <div class="col-md-6 col-md-offset-3">
   <h1><%= @post.title %></h1>
       <p><%= @post.body %></p>
-      <% if logged_in? && current_user.id || current_user.admin == @post.user_id %>
+      <% if logged_in? && (current_user.id == @post.user_id || current_user.admin? ) %>
         <hr>
         <%= link_to t("edit.msg"), edit_post_path(@post), class: "btn btn-primary" %>
         <%= link_to t("delete.msg"), post_path(@post), method: :delete, data:{confirm: t("confirm") }, class: "btn btn-danger" %>
@@ -14,9 +14,16 @@
       <hr>
 </div>
 <div class="col-md-6 col-md-offset-3">
-  <%= pluralize @post.views, t("posts.views") %>
-  <%= pluralize @post.comments.size, t("comments.title") %>
   <%= pluralize @post.activities.like.size, t("activity.like") %>
+  <%= pluralize @post.comments.size, t("comments.title") %>
+  <%= pluralize @post.views, t("posts.views") %>
+  <ul class="topic">
+    <svg width="1em" height="0.8em" viewBox="0 0 16 16" class="bi bi-tag-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+    </svg>
+    <%= t "delete.topic" %>
+    <%= @post.topic.name %>
+  </ul>
   <h2><%= t "comments.add" %></h2>
   <%= render "comments/comments" %>
   <%= render "activities/selectform" %>

@@ -18,6 +18,7 @@ en:
       inbox: "Inbox"
       notification_index: "View All"
       statistic_header: "Statistic"
+      new_topic: "Add Topic"
 
   static_pages:
     home:
@@ -97,6 +98,7 @@ en:
   delete:
     msg: "Delete"
     button: "Delete"
+    topic: "Topic : "
   confirm: "Are you sure?"
   comments:
     title: "Comment"
@@ -145,6 +147,7 @@ en:
     deletefail: "Fail to delete"
   search:
     title: "Search Title: "
+    topic_new: "Add New Topic"
 
   user_mailer:
     account_activation:
