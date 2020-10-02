@@ -145,6 +145,10 @@ en:
     createfail: "Fail to create"
     delete: "Topic deleted"
     deletefail: "Fail to delete"
+    back: "Back "
+    deny: "You do not have access to this function. "
+    notfound: "Topic not found. "
+    login_remind: "Please log in. "
   search:
     title: "Search Title: "
     topic_new: "Add New Topic"

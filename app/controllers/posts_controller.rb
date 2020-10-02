@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :load_post, except: %i(index new create)
   before_action :logged_in_user, only: %i(create destroy)
   before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, only: %i(destroy)
 
   def index
     @topics = Topic.lastest
@@ -89,9 +88,5 @@ class PostsController < ApplicationController
 
     flash[:warning] = t "posts.notfound"
     redirect_to root_path
-  end
-
-  def admin_user
-    redirect_to root_path unless current_user.admin?
   end
 end

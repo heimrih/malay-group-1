@@ -1,6 +1,9 @@
 class TopicsController < ApplicationController
   before_action :load_topic, except: %i(index new create)
-  before_action :admin_user, only: %i(create destroy)
+  before_action :logged_in_user, only: %i(create destroy)
+  before_action :correct_user, only: %i(edit update)
+  before_action :admin_user, only: :destroy
+
   def index
     @topics = Topic.all
   end
@@ -42,7 +45,23 @@ class TopicsController < ApplicationController
     @topic = Topic.find_by id: params[:id]
     return if @topic
 
-    flash[:warning] = t "posts.notfound"
+    flash[:warning] = t "topic.notfound"
+    redirect_to root_path
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t "topic.login_remind"
+    redirect_to login_path
+  end
+
+  def correct_user
+    @topic = current_user.topics.find_by id: params[:id]
+    return if @post
+
+    flash[:warning] = t "topic.notfound"
     redirect_to root_path
   end
 

@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <p><%= t "topic.title" %></p>
+      <%= link_to t("topic.title"), topics_path %>
     <% @topics.each do |topic| %>
       <li class="nav-item">
       <%= link_to topic.name, posts_path(:top => topic.id) %>

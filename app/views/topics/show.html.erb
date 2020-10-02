@@ -1,5 +1,12 @@
 <div class="container">
-  <h1><%= @topic.name %></h1>
-        <%= link_to t("delete.msg"), topic_path, method: :delete, data:{confirm: t("confirm") }, class: "btn btn-danger" %>
-      <hr>
+  <% if logged_in? && current_user.admin? %>
+    <h1><%= t "topic.title" %></h1>
+    <h1><%= @topic.name %></h1>
+    <%= link_to t("delete.msg"), topic_path, method: :delete, data:{confirm: t("confirm") }, class: "btn btn-danger" %>
+    <hr>
+  <% else %>
+    <h3><%= t "topic.deny" %></h3>
+    <br>
+    <%= link_to t("topic.back"), root_path, class: "btn btn-danger" %>
+  <% end %>
 </div>

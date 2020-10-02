@@ -6,6 +6,9 @@
             <div class="list-group" style="max-width: 500px;">
               <div class="list-group-item list-group-item-action">
                 <%= topic.name %> (<%= topic.posts.count %>)
+                <%if logged_in? && current_user.admin? %>
+                  <%= link_to t("delete.msg"), topic_path(topic), class: "btn btn-danger" %>
+                <% end %>
               </div>
           <% end %>
           </div>
